@@ -36,11 +36,11 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Build Docker Image
-        run: docker build -t your-username/k8s-github-actions:latest .
+        run: docker build -t gnanieswar195/k8s-github-actions:latest .
         working-directory: app
 
       - name: Push Docker Image
-        run: docker push your-username/k8s-github-actions:latest
+        run: docker push gnanieswar195/k8s-github-actions:latest
 
   k8s-deploy:  
     needs: containerize
